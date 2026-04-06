@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Repo Keşfet</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="panel">
+    <header>
+      <h1>🔍 GitHub Repo Keşfet</h1>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Repo ara... (örn: react, fastapi, docker)" autocomplete="off"/>
+        <button id="searchBtn">Ara</button>
+        <button id="clearBtn" style="display:none">✕</button>
+      </div>
+    </header>
+
+    <div class="filters">
+      <div class="filter-group">
+        <label>Kategori</label>
+        <div class="tags" id="categoryTags">
+          <button class="tag active" data-topic="web">🌐 Web</button>
+          <button class="tag" data-topic="api">⚡ API</button>
+          <button class="tag" data-topic="cli">🖥️ CLI</button>
+          <button class="tag" data-topic="database">🗄️ Database</button>
+          <button class="tag" data-topic="devops">🚀 DevOps</button>
+          <button class="tag" data-topic="ai">🤖 AI/ML</button>
+          <button class="tag" data-topic="mobile">📱 Mobile</button>
+          <button class="tag" data-topic="security">🔒 Security</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Dil</label>
+        <div class="tags" id="langTags">
+          <button class="tag active" data-lang="">Tümü</button>
+          <button class="tag" data-lang="JavaScript">JS</button>
+          <button class="tag" data-lang="TypeScript">TS</button>
+          <button class="tag" data-lang="Python">Python</button>
+          <button class="tag" data-lang="Go">Go</button>
+          <button class="tag" data-lang="Rust">Rust</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Sırala</label>
+        <select id="sortSelect">
+          <option value="stars">⭐ En Çok Yıldız</option>
+          <option value="forks">🍴 En Çok Fork</option>
+          <option value="updated">🕐 Son Güncelleme</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="repoGrid" class="repo-grid"></div>
+
+    <div class="pagination">
+      <button id="prevBtn" disabled>← Önceki</button>
+      <span id="pageInfo">Sayfa 1</span>
+      <button id="nextBtn">Sonraki →</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
